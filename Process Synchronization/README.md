@@ -14,6 +14,7 @@
 **해결책** 
 커널 모드에서 수행 중일떄는 CPU를 뻇지 않는다. 커널 모드에서 사용자 모드로 돌아갈때 프로세스를 뺏는다
 ![alt text](image.png)
+<br>
 
 ### 다중 CPU의 경우
 한 번에 하나의 CPU만이 커널에 들어갈 수 있게 하는 방법
@@ -21,10 +22,12 @@
 
 ## Process Synchronization
 ![alt text](image-1.png)
+<br>
 각 프로세스에 code segment에는 공유 데이터를 접근하는 코드인 critical section(임계 구역)이 있음.
 
 ### 임계 구역의 접근
 - Algorithm 1
+<br>
 ![alt text](image-2.png)
 1. 상호 배제
 다른 프로세스가 critical section 부분을 수행 중이면 다른 모든 프로세스들은 그들의 critical section에 들어가면 안된다.
@@ -33,19 +36,28 @@
 3. 유한 대기 
 무한적으로 critical section에 접근 할 수 없으면 안된다.
 - Algorithm 2
+<br>
 ![alt text](image-3.png)
 
+
 - Algorithm 3
+<br>
 ![alt text](image-4.png)
 
 ### Synchronization Hardware
 하드웨어 적으로 Test & modify를 atomic하게 수행할 수 있도록 지원하는 경우 앞의 문제는 간단히 해결
 
 ### Semaphores
+<br>
+
 ![alt text](image-5.png)
 ![alt text](image-6.png)
+
 busy - wait 문제에는 효율적이지 못하다.
+
 ### Block / Wakeup
+<br>
+
 ![alt text](image-7.png)
 ![alt text](image-8.png)
 
@@ -61,6 +73,8 @@ busy - wait 문제에는 효율적이지 못하다.
 
 ## Synchronization의 전통적인 문제
 ### Bounded Buffer 문제
+<br>
+
 ![alt text](image-9.png)
 ### 두 가지의 Semaphores
 - Counting semaphore
